@@ -1,0 +1,12 @@
+<!-- <app-hello-world></app-hello-world> -->
+<app-outside-import [defaultCount]="count" (displayTitle)="handleGetTitle($event)"></app-outside-import>
+<div>{{title}}</div>
+
+<input [(ngModel)]="defaultValue" (ngModelChange)="checkValue($event)"/>
+<div>{{defaultValue}}</div>
+
+<button nz-button nzType="primary">Primary</button>
+<button nz-button nzType="default">Default</button>
+<button nz-button nzType="dashed">Dashed</button>
+<button nz-button nzType="danger">Danger</button>
+<button nz-button nzType="link">Link</button>

@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>{{displayName}}</h1>
+  <div [ngClass]="isHasClass ? 'text-color' : ''">练习一下ngClass</div>
+  <div [ngStyle]="styleObj">练习一下ngStyle</div>
+
+  <ul *ngIf="userRole === 'backEnd'">
+    <li *ngFor="let subject of studySubjects; let i = index; let count = count; odd as isOdd">
+    {{i}} - {{subject}}{{count}}
+    {{isOdd}}
+    </li>
+  </ul>
+
+  <ul [hidden]="userRole === 'backEnd'">
+  <li *ngFor="let subject of studySubjects; let i = index; let count = count; odd as isOdd">
+  {{i}} - {{subject}}{{count}}
+  {{isOdd}}
+  </li>
+</ul>
+
+<div [ngSwitch]="age">
+<span *ngSwitchCase="'12'">小学毕业</span>
+<span *ngSwitchCase="'18'">高中毕业</span>
+<span *ngSwitchCase="'22'">大学毕业</span>
+<span *ngSwitchDefault>未知</span>
+</div>
+
+<img [src]="imgUrl">
+<img src="{{imgUrl}}">
+<button [disabled]="isDisabledBtn">是否置灰</button>
+<span [innerHtml]="spanContent"></span>
+
+<div [class.text-color]="isHasClass">练习class属性的使用</div>
+
+<div>今天日期{{curDate}}</div>
+<div>今天日期{{curDate | date | uppercase}}</div>
+<div>今天日期{{curDate | date: 'MM:dd:yy'}}</div>
+
+<button (click)="addCount($event, 5); addSubject()">累计加1</button>
+<span>{{defaultCount}}</span>
+
+</div>
